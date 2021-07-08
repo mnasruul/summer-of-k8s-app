@@ -3,21 +3,16 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"os"
 )
 
 func main() {
 
-	//Add a GPL3 package to cause havock
-	// os.Setenv("test", string(exitcodes.Success))
+	version := "1.0"
 
-	c := os.Getenv("COLOR")
-	if len(c) == 0 {
-		os.Setenv("COLOR", "#44B3C2") //Blue 44B3C2 and Yellow F1A94E
-	}
+	color := "#44B3C2" //Blue 44B3C2 and Yellow F1A94E
 
 	http.HandleFunc("/callme", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "<html style='background:"+os.Getenv("COLOR")+"'> Requested: %s\n </html>", r.URL.Path)
+		fmt.Fprintf(w, "<div class='pod' style='background:%s'> ver: %s\n </div>", color, version)
 	})
 
 	fs := http.FileServer(http.Dir("./static"))
