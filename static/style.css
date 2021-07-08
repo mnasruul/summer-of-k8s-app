@@ -1,0 +1,28 @@
+body {
+	margin:10px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif
+}
+
+.box {
+	width:200px;
+	height:200px;
+	margin:10px;
+	padding:10px;
+    float: left;
+}
+
+.box {
+	background:#c00;
+    border-radius: 25px;
+}
+
+
+h2, p  {
+	padding:5px;
+}
+
+.box p {
+	white-space:pre;
+	font-size:smaller;
+	font-family:monospace;
+}
