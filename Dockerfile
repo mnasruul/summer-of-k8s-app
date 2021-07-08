@@ -10,8 +10,9 @@ FROM alpine:3.13
 
 EXPOSE 8080
 
-RUN apk add --no-cache jq ca-certificates bash
+RUN apk add --no-cache ca-certificates bash
 
+COPY --from=build-env /tmp/workdir/static /app/static
 COPY --from=build-env /tmp/workdir/summer-of-k8s-app /app/summer-of-k8s-app
 
 WORKDIR /app
