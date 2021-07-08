@@ -26,6 +26,8 @@ Run
 
  then visit http://localhost:8080 in your browser
 
+You can find prebuilt images at [https://hub.docker.com/r/kostiscodefresh/summer-of-k8s-app/tags](https://hub.docker.com/r/kostiscodefresh/summer-of-k8s-app/tags)
+
 ## Deploying to Kubernetes
 
 You can find the associated manifests at [https://github.com/kostis-codefresh/summer-of-k8s-app-manifests](https://github.com/kostis-codefresh/summer-of-k8s-app-manifests)
