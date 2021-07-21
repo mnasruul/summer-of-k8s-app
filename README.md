@@ -22,7 +22,7 @@ then visit http://localhost:8080 in your browser
 Run
 
  *  `docker build . -t my-app` to create a container image 
- *  `docker run -p 8080:8080 my-app' to run it
+ *  `docker run -p 8080:8080 my-app` to run it
 
  then visit http://localhost:8080 in your browser
 
