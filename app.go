@@ -9,14 +9,11 @@ func main() {
 
 	version := "<b>1.3.0</b>"
 
-	color := "#c034eb" //Blue 44B3C2 and Yellow F1A94E
+	color := "#F1A94E" //Blue 44B3C2 and Yellow F1A94E
 
 	http.HandleFunc("/callme", func(w http.ResponseWriter, r *http.Request) {
 		headers := ""
-		for i, v := range r.Header {
-			headers = headers + fmt.Sprintf("<b>%s</b>: %s\n", i, v)
-			// fmt.Fprintf(w, "<div class='pod' style='background:%s'> %s: %s\n </div>", color, i, v)
-		}
+		headers = r.Header.Get("mnasruul-summer-of-k8s-app")
 		fmt.Fprintf(w, "<div class='pod' style='background:%s'> ver: %s\n headers:\n %s </div>", color, version, headers)
 	})
 
