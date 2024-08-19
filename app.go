@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	version := "<b>1.3.0</b>"
+	version := "<b>2.0</b>"
 
 	color := "#F1A94E" //Blue 44B3C2 and Yellow F1A94E
 
