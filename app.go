@@ -7,12 +7,17 @@ import (
 
 func main() {
 
-	version := "3.0"
+	version := "<b>1.3.0</b>"
 
 	color := "#c034eb" //Blue 44B3C2 and Yellow F1A94E
 
 	http.HandleFunc("/callme", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "<div class='pod' style='background:%s'> ver: %s\n </div>", color, version)
+		headers := ""
+		for i, v := range r.Header {
+			headers = headers + fmt.Sprintf("<b>%s</b>: %s\n", i, v)
+			// fmt.Fprintf(w, "<div class='pod' style='background:%s'> %s: %s\n </div>", color, i, v)
+		}
+		fmt.Fprintf(w, "<div class='pod' style='background:%s'> ver: %s\n headers:\n %s </div>", color, version, headers)
 	})
 
 	fs := http.FileServer(http.Dir("./static"))
